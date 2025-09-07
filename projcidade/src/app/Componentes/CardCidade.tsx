@@ -1,5 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
+// Apenas importe os componentes que você realmente vai usar
+import { Button, Card, CardBody, CardFooter, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Providers } from "../provider";
 
 interface Cidades {
     id: number;
@@ -23,7 +26,8 @@ interface Cidades {
 
 
 
-export default function Card() {
+
+export default function CardCidade() {
 
     const [Data, setData] = useState<Cidades[]>([]);
     const [randomCity, setRandomCity] = useState<Cidades | null>(null);
@@ -75,22 +79,34 @@ export default function Card() {
         return <p>Carregando lista de cidades...</p>;
     }
 
+
+
+
+
+
     return (
         <>
-        <h1> cidades do brasil</h1>
-      
+
+{/*       
         <ul>
             {Data?.slice(0, 10).map((cidade) =>
             <li key={cidade.id}>
                 {cidade.nome} 
             </li>
             )}
-        </ul>
+        </ul> */}
 
-        <h1>Gerador de Cidade Aleatória</h1>
-            <button onClick={handleGetRandomCity}>
+        <h1>Gerador de cidade Aleatórias do Brasil</h1>
+            {/* <button onClick={handleGetRandomCity}>
                 Sortear uma Cidade
-            </button>
+            </button> */}
+
+
+            
+            <Card.Root maxW="sm" overflow="hidden">
+            <Card.Body gap="2">
+            <Card.Title>Gerador de cidades aleatórias</Card.Title>
+            
             {randomCity && (
         <div>
                     <h2>Cidade Sorteda:</h2>
@@ -102,7 +118,13 @@ export default function Card() {
                 </div>
             )}
 
-                
+</Card.Body>
+                 <Card.Footer gap="2">
+              <Button variant="solid" onClick={handleGetRandomCity}>Sortear uma cidade aleatória</Button>
+              <Button variant="ghost">Ver drogarias</Button>
+            </Card.Footer>
+             </Card.Root>
+
         </>
     );
 

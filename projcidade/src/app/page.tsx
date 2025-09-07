@@ -1,5 +1,5 @@
 "use client";
-import Card from './Componentes/Card';
+import Card from './Componentes/CardCidade';
 
 export default function Home() {
   return (
