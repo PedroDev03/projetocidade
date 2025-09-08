@@ -1,6 +1,8 @@
 "use client";
 import "./globals.css";
 import { Providers } from "./provider";
+import image from "@/app/assets/background-login2.png"
+
 
 export default function RootLayout({
   children,
