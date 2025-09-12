@@ -1,13 +1,26 @@
 "use client";
 import Card from './Componentes/CardCidade';
-import Image from "next/image";
-import BG from "@/app/assets/background-login2.png"
+
+
 
 export default function Home() {
   return (
     <div>
     <link rel="icon" href="/icon_infopharma.png" />
-      <Image src={BG} alt="Fundo" fill style={{ objectFit: "cover" }} />
+      <img
+  src="/background-login2.png"
+  alt="Fundo"
+  style={{
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    objectFit: 'cover'
+  }}
+/>
       <title>Sortear Cidade</title>
 
       <main>

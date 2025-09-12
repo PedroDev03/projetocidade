@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 // Apenas importe os componentes que você realmente vai usar
-import { Box, Button, Card, CardBody, CardFooter, Center, Heading, Stack, Text } from "@chakra-ui/react";
-import { Providers } from "../provider";
+import { Box, Button, Card, Text } from "@chakra-ui/react";
+
 
 
 interface Cidades {
@@ -149,19 +149,6 @@ style={{fontWeight:'bold'}}
     return (
         <>
 
-                  
-        {/* <ul>
-            {Data?.slice(0, 10).map((cidade) =>
-            <li key={cidade.id}>
-                {cidade.nome} 
-            </li>
-            )}
-        </ul> */}
-
-
- 
-
-
             <Box display="flex" justifyContent="Center" alignContent="Center"
            bgSize="cover"
             bgRepeat="no-repeat"
@@ -188,11 +175,11 @@ style={{fontWeight:'bold'}}
                         </div>
                     )}
                         
-                        {searchAttempted && !isLoadingPharmacies && pharmacies.length === 0 && (
+                        {/* {searchAttempted && !isLoadingPharmacies && pharmacies.length === 0 && (
                              <Text mt={4} color="orange.600">
                                 Nenhuma farmácia encontrada para esta cidade.
                              </Text>
-                        )}
+                        )} */}
 
 
                         
@@ -229,4 +216,4 @@ style={{fontWeight:'bold'}}
         </>
     );
 
-}0
+}
