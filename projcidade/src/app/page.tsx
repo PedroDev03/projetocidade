@@ -1,18 +1,13 @@
 "use client";
-import Card from './Componentes/CardCidade';
-import Image from "next/image";
-import BG from "@/app/assets/background-login2.png"
+// Certifique-se de que o caminho abaixo bate exatamente com a sua pasta (maiúscula/minúscula)
+import Card from './Componentes/CardCidade'; 
+
 export default function Home() {
   return (
-    <div>
-      {/* <Image src={BG} alt="Fundo" fill style={{ objectFit: "cover" }} /> */}
+    <div style={{ backgroundColor: '#5C161E', minHeight: '100vh' }}>
       <main>
-       {Card()}
+        <Card />
       </main>
-      {/* <footer className="">
-
-        {C}
-      </footer> */}
     </div>
   );
-}
+}   

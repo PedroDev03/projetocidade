@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 // Apenas importe os componentes que você realmente vai usar
-import { Box, Button, Card, CardBody, CardFooter, Center, Heading, Stack, Text } from "@chakra-ui/react";
-import { Providers } from "../provider";
+import { Box, Button, Card } from "@chakra-ui/react";
+
 
 
 interface Cidades {
@@ -30,7 +30,6 @@ interface Lugar {
     display_name: string;
 
 }
-
 
 
 export default function CardCidade() {
