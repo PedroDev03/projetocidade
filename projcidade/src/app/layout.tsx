@@ -1,7 +1,13 @@
-"use client";
-import "./globals.css";
-import { Providers } from "./provider";
+import type { Metadata } from "next";
+import "./globals.css"; // ou seus estilos globais
 
+export const metadata: Metadata = {
+  title: "Sortear Cidade",
+  description: "App para sortear cidades",
+  icons: {
+    icon: "/favicon.ico", // O favicon deve estar dentro da pasta /public
+  },
+};
 
 export default function RootLayout({
   children,
@@ -9,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+    <html lang="pt-BR">
+      <body>{children}</body>
     </html>
   );
 }
