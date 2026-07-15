@@ -92,7 +92,7 @@ export default function CardCidade() {
     );
 
     if (isLoading) {
-        return <p>Carregando lista de cidades...</p>;
+        return <p  style={{color:'white'}}>Carregando lista de cidades...</p>;
     }
 
 
