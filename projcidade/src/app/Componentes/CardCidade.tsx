@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-// Apenas importe os componentes que você realmente vai usar
-import { Button, Card } from "@chakra-ui/react";
+// Sem dependências do Chakra UI
 
 
 
@@ -70,7 +69,7 @@ export default function CardCidade() {
     };
 
 
-    const LinkDrogMap = <a target="blank" href={`https://www.google.com/maps/search/${niche}+${randomCity?.nome}+${randomCity?.microrregiao.mesorregiao.UF.sigla}`} style={{ color: 'indigo', fontWeight: 'bold' }} ><u> Clique aqui</u></a>
+    const LinkDrogMap = <a target="_blank" rel="noopener noreferrer" href={`https://www.google.com/maps/search/${niche}+${randomCity?.nome}+${randomCity?.microrregiao.mesorregiao.UF.sigla}`} className="premium-link" >Clique aqui</a>
 
     if (isLoading) {
         return <p style={{ color: 'white' }}>Carregando lista de cidades...</p>;
@@ -81,25 +80,18 @@ export default function CardCidade() {
         <>
 
 
-            <div style={{
-                backgroundColor: '#5c161e',
-                minHeight: '100vh',
-                display: 'flex'
-            }}>
-                <Card.Root
-                    maxW="sm" overflow="hidden" marginTop={0} shadowColor={"black"}
-                    boxShadow="xs"
-                >
-                    <Card.Body gap="2">
-                        <Card.Title style={{ textAlign: "center", fontWeight: 'bolder' }}>Sorteador de cidades </Card.Title>
+            <div className="bg-full">
+                <div className="premium-card">
+                    <div>
+                        <h2 className="premium-title">Sorteador de Cidades</h2>
 
-                        <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                            <label htmlFor="niche-select" style={{ fontWeight: 'bold' }}>Escolha o nicho de pesquisa:</label>
+                        <div style={{ marginBottom: '24px' }}>
+                            <label htmlFor="niche-select" className="premium-label">Escolha o nicho de pesquisa:</label>
                             <select
                                 id="niche-select"
                                 value={niche}
                                 onChange={(e) => setNiche(e.target.value)}
-                                style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '16px', backgroundColor: 'white', color: 'black' }}
+                                className="premium-select"
                             >
                                 <option value="Comércio">Comércio Geral</option>
                                 <option value="Restaurantes">Restaurantes</option>
@@ -113,25 +105,28 @@ export default function CardCidade() {
                         </div>
 
                         {randomCity && (
-                            <div>
-                                <h2 style={{ marginTop: '20px', fontSize: '15px' }}><b>Cidade Sorteada:</b></h2>
-                                <p style={{ fontSize: '2rem', fontWeight: 'bold', marginTop: '15px' }}>
+                            <div style={{ textAlign: 'center', marginTop: '24px', padding: '20px', backgroundColor: '#f9fafb', borderRadius: '12px' }}>
+                                <p className="premium-label" style={{ marginBottom: 0, color: '#111827', fontWeight: 'bold' }}>CIDADE SORTEADA</p>
+                                <p className="premium-city-name">
                                     {randomCity.nome} - {randomCity.microrregiao.mesorregiao.UF.sigla}
                                 </p>
-                                <p style={{ marginTop: '10px', fontSize: '20px' }}>{niche === 'Comércio' ? 'Comércios' : niche} na cidade {randomCity.nome}<br></br> pelo Google maps: {LinkDrogMap}</p><br></br>
-
-                                <p></p>
+                                <p className="premium-text" style={{ marginTop: '16px' }}>
+                                    Buscar <b>{niche === 'Comércio' ? 'Comércios' : niche}</b> no Google Maps: <br /><br />
+                                    {LinkDrogMap}
+                                </p>
                             </div>
                         )}
 
-
-
-                    </Card.Body>
-                    <Card.Footer gap="1" style={{ display: 'flex', justifyContent: 'center' }} >
-                        <Button variant="solid" onClick={handleGetRandomCity} style={{ fontSize: '15px', textAlign: 'center' }} >Sortear uma cidade aleatória</Button>
-
-                    </Card.Footer>
-                </Card.Root>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <button
+                            onClick={handleGetRandomCity}
+                            className="premium-button"
+                        >
+                            Sortear uma cidade aleatória
+                        </button>
+                    </div>
+                </div>
             </div>
         </>
     );

@@ -4,10 +4,137 @@
 
 
 
-a:hover{
-    color:#a855f7;
+a:hover {
+    color: #a855f7;
 }
+
 a {
-  color: hsl(270, 80%, 40%); /* roxo mais escuro */
-  transition: color 0.2s ease;
+    color: hsl(270, 80%, 40%);
+    /* roxo mais escuro */
+    transition: color 0.2s ease;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #5c161e;
+}
+
+.bg-full {
+    background-color: #5c161e;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.premium-card {
+    background: #ffffff;
+    color: #1f2937;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    max-width: 440px;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.premium-card:hover {
+    transform: translateY(-5px);
+}
+
+.premium-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+    margin-top: 0;
+    color: #111827;
+}
+
+.premium-label {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #374151;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.premium-select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid #e5e7eb;
+    font-size: 1rem;
+    background-color: #f9fafb;
+    color: #111827;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.premium-select:focus {
+    border-color: #5c161e;
+    box-shadow: 0 0 0 3px rgba(92, 22, 30, 0.15);
+}
+
+.premium-button {
+    background-color: #5c161e;
+    color: #ffffff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    font-size: 1.4rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(92, 22, 30, 0.3);
+    margin-top: 24px;
+}
+
+.premium-button:hover {
+    background-color: #7b1e28;
+}
+
+.premium-button:active {
+    transform: scale(0.98);
+}
+
+.premium-text {
+    font-size: 1.4rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.premium-city-name {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #111827;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.premium-link {
+    color: #5c161e;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #5c161e;
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.premium-link:hover {
+    color: #8c2333;
+    border-color: #8c2333;
 }

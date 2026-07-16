@@ -4,10 +4,10 @@ import Card from './componentes/cardcidade';
 
 export default function Home() {
   return (
-    <div style={{ backgroundColor: '#5C161E', minHeight: '100vh' }}>
+    <>
       <main>
         <Card />
       </main>
-    </div>
+    </>
   );
 }   
